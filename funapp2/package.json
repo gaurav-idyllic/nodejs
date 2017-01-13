@@ -1,0 +1,15 @@
+{
+  "name": "funapp2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mustache": "^2.3.0",
+    "uglify": "^0.1.5"
+  }
+}

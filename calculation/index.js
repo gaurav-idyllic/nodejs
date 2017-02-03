@@ -1,14 +1,32 @@
+//
+// Author: Gaurav Mamidwar
+//
+// Calculator App
+//
+// You can perform add, substract, multiply and divide using this app.
+//
+// For this, u need to pass query params containing action and values
+//
+// here are the example URL's
+//
+// http://localhost:3002/?action=add&a=112&b=10
+// http://localhost:3002/?action=minus&a=112&b=10
+// http://localhost:3002/?action=multiply&a=112&b=10
+// http://localhost:3002/?action=divide&a=112&b=10
+
 var http = require('http');
+var url = require('url');
+var calculator = require('./calculator');
 
 requestHandler = function(req, res) {
-  console.log('inside requestHandler');
-  console.log(process.argv[0]);
-  if(req.url == '/'){
-    var results = [1,2,2,2,2,2];
-    res.end(results.join(','));
-  } else {
-    res.end('route not found.')
-  }
+  var url_parts = url.parse(req.url, true);
+  console.log(url_parts);
+  var url_parts_false = url.parse(req.url, false);
+  console.log('~~~~~~~~~~~~~ url_parts - parsing false');
+  console.log(url_parts_false);
+  console.log('~~~~~~~~~~~~~');
+  var query = url_parts.query;
+  res.end('result = ' + calculator(query));
 }
 
 var server = http.createServer(requestHandler);

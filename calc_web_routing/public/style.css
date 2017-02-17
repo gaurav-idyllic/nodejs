@@ -1,0 +1,31 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  background-color: black !important;
+}
+
+em {
+  font-style: normal;
+/*  font-weight: bold;  */
+}
+
+.body_div {
+  color: white;
+  min-height: 300px;
+}
+
+.action_buttons button {
+  margin: 8px;
+  color: black;
+}
+
+.input-box-class input {
+  color: black;
+  margin: 8px;
+}
+
+.result-div {
+  margin: 8px;
+}

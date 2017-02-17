@@ -2,9 +2,9 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var morgan = require('morgan');
-var mustache = require('mustache');
 var calculator = require('./calculator');
 
+app.set('views', path.resolve(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(morgan('combined'));
 var pub_path = path.resolve(__dirname, 'public');
@@ -24,7 +24,7 @@ app.get('/perform_operation', function(req, res, next){
 });
 
 app.use(function(req, res){
-  res.status(200).send('arerererer ');
+  res.status(200).send('page not found.');
 });
 
 
